@@ -8,14 +8,16 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('vehicles', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('license_plate');
-            $table->integer('axles');
-            $table->foreignId('vehicles_type_id')->constrained('vehicles_type')->onDelete('cascade');
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('vehicles')) {
+            Schema::create('vehicles', function (Blueprint $table) {
+                $table->id();
+                $table->string('name');
+                $table->string('license_plate');
+                $table->integer('axles');
+                $table->foreignId('vehicles_type_id')->constrained('vehicles_type')->onDelete('cascade');
+                $table->timestamps();
+            });
+        }
     }
     public function down(): void
     {

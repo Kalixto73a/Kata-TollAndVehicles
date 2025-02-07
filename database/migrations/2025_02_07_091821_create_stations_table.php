@@ -8,12 +8,14 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('stations', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('city');
-            $table->timestamps();   
-        });
+        if (!Schema::hasTable('vehicles')) {
+            Schema::create('stations', function (Blueprint $table) {
+                $table->id();
+                $table->string('name');
+                $table->string('city');
+                $table->timestamps();   
+            });
+        }
     }
     public function down(): void
     {
