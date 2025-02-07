@@ -13,60 +13,54 @@ class StationsVehiclesSeeder extends Seeder
     {
         $stationVehicles = [
             [
-                'station_id' => Station::all()->random()->id,
-                'vehicle_id' => 1,
+                'stations_id' => 1,
+                'vehicles_id' => 1,
+                'pass_count' => 2,
             ],
             [
-                'station_id' => Station::all()->random()->id,
-                'vehicle_id' => 1,
+                'stations_id' => 3,
+                'vehicles_id' => 2,
+                'pass_count' => 2,
             ],
             [
-                'station_id' => Station::all()->random()->id,
-                'vehicle_id' => 2,
+                'stations_id' => 4,
+                'vehicles_id' => 2,
+                'pass_count' => 1,
             ],
             [
-                'station_id' => Station::all()->random()->id,
-                'vehicle_id' => 2,
+                'stations_id' => 6,
+                'vehicles_id' => 3,
+                'pass_count' => 1,
             ],
             [
-                'station_id' => Station::all()->random()->id,
-                'vehicle_id' => 2,
+                'stations_id' => 4,
+                'vehicles_id' => 4,
+                'pass_count' => 1,
             ],
             [
-                'station_id' => Station::all()->random()->id,
-                'vehicle_id' => 3,
+                'stations_id' => 3,
+                'vehicles_id' => 5,
+                'pass_count' => 2,
             ],
             [
-                'station_id' => Station::all()->random()->id,
-                'vehicle_id' => 4,
+                'stations_id' => 1,
+                'vehicles_id' => 6,
+                'pass_count' => 1,
             ],
             [
-                'station_id' => Station::all()->random()->id,
-                'vehicle_id' => 5,
+                'stations_id' => 4,
+                'vehicles_id' => 7,
+                'pass_count' => 2,
             ],
             [
-                'station_id' => Station::all()->random()->id,
-                'vehicle_id' => 5,
+                'stations_id' => 6,
+                'vehicles_id' => 8,
+                'pass_count' => 1,
             ],
             [
-                'station_id' => Station::all()->random()->id,
-                'vehicle_id' => 6,
-            ],
-            [
-                'station_id' => Station::all()->random()->id,
-                'vehicle_id' => 7,
-            ],
-            [
-                'station_id' => Station::all()->random()->id,
-                'vehicle_id' => 7,
-            ],
-            [
-                'station_id' => Station::all()->random()->id,
-                'vehicle_id' => 8,
-            ],
-            [
-                'station_id' => Station::all()->random()->id,
-                'vehicle_id' => 9,
+                'stations_id' => 1,
+                'vehicles_id' => 9,
+                'pass_count' => 2,
             ],
         ];
         foreach ($stationVehicles as $stationVehicle) {
