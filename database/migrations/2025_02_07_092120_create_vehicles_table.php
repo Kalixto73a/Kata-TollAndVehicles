@@ -13,7 +13,7 @@ return new class extends Migration
                 $table->string('name');
                 $table->string('license_plate');
                 $table->integer('axles');
-                $table->foreignId('vehicles_type_id')->constrained('vehicles_type')->onDelete('cascade');
+                $table->foreignId('vehicles_type_id')->constrained('vehicles_types')->onDelete('cascade');
                 $table->timestamps();
             });
     }

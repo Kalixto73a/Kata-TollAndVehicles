@@ -12,13 +12,19 @@ class VehiclesTypesSeeder extends Seeder
     {
         $vehicleTypes = [
             [
-                'name' => 'Coche',
+                'vehicle_type' => 'Coche',
+                'base_fee' => 100,
+                'aditional_base_fee' => 0,
             ],
             [
-                'name' => 'Moto',
+                'vehicle_type' => 'Moto',
+                'base_fee' => 50,
+                'aditional_base_fee' => 0,
             ],
             [
-                'name' => 'Camión',
+                'vehicle_type' => 'Camión',
+                'base_fee' => 50,
+                'aditional_base_fee' => 50,
             ],
         ];
         foreach ($vehicleTypes as $vehicleType) {
