@@ -9,32 +9,33 @@ use App\Models\StationVehicle;
 
 class StationVehicleController extends Controller
 {
-    public function update(Request $request, string $id)
+    public function store(Request $request)
     {
-        $Vehicle = StationVehicle::find($id);
-        if (!$Vehicle) {
-            return response()->json(['message' => 'Vehicle not found'], 404);
+        // Validar los datos recibidos
+        $request->validate([
+            'stations_id' => 'required|integer|exists:stations_vehicles,stations_id',
+            'vehicles_id' => 'required|integer|exists:stations_vehicles,vehicles_id',
+        ]);
+
+        // Buscar el registro correspondiente
+        $stationVehicle = StationVehicle::where('stations_id', $request->stations_id)
+            ->where('vehicles_id', $request->vehicles_id)
+            ->first();
+
+        if (!$stationVehicle) {
+            return response()->json([
+                'message' => 'El registro no existe en stations_vehicles',
+            ], 404);
         }
-        $validated = $request->validate([
-            'station_id' => 'foreign_key:stations,id',
-            'vehicle_id' => 'foreign_key:vehicles,id',
-            'pass_count' => 'required|integer|min:1',
-        ]);
-        $stationVehicle = StationVehicle::where('station_id', $request->station_id)
-                                    ->where('vehicle_id', $request->vehicle_id)
-                                    ->first();
-                                    
-        $station_id = $validated['station_id']?? $Vehicle->station_id;
-        $vehicle_id = $validated['vehicle_id']?? $Vehicle->vehicle_id;
-        $pass_count = $validated['pass_count']?? $Vehicle->pass_count;
 
-        $Vehicle->update([
-            'station_id' => $station_id,
-            'vehicle_id' => $vehicle_id,
-            'pass_count' => $pass_count,
-        ]);
+        // Incrementar el valor de pass_count
+        $stationVehicle->pass_count += 1;
+        $stationVehicle->save();
 
-        $Vehicle->save();
-        return response()->json($Vehicle, 200);  
+        // Respuesta en caso de éxito
+        return response()->json([
+            'message' => 'Se ha registrado el paso del vehículo por la estación',
+            'stationVehicle' => $stationVehicle,
+        ], 200);
     }
 }
