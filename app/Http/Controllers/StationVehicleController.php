@@ -13,7 +13,7 @@ class StationVehicleController extends Controller
         $stationVehicles->each(function ($stationVehicle) {
             $stationVehicle->totalPrice = $this->calculateTollPrice($stationVehicle->id);
         });
-        return view('stationVehicles', compact('stationVehicles'));
+        return view('home', 'station', 'vehicles', compact('stationVehicles'));
     }
     private function calculateTollPrice($stationVehicleId)
     {
