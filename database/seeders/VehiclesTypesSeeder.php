@@ -23,7 +23,7 @@ class VehiclesTypesSeeder extends Seeder
             ],
             [
                 'vehicle_type' => 'Camión',
-                'base_fee' => 50,
+                'base_fee' => 0,
                 'aditional_base_fee' => 50,
             ],
         ];

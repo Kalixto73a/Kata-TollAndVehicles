@@ -10,17 +10,18 @@ class Vehicle extends Model
     use HasFactory;
     protected $table = 'vehicles';
     protected $fillable = [
-        'vehicle_type',
-        'base_fee',
-        'aditional_base_fee',
+        'name',
+        'license_plate',
+        'axles',
+        'vehicles_type_id'
     ];
     public function vehicleType()
     {
-        return $this->belongsTo(VehicleType::class);
+        return $this->belongsTo(VehicleType::class, 'vehicles_type_id');
     }
     public function stations()
     {
-        return $this->belongsToMany(Station::class, 'station_vehicles')
-                    ->withPivot('total_collected', 'pass_count');
+        return $this->belongsToMany(Station::class)
+                    ->withPivot('pass_count');
     }
 }

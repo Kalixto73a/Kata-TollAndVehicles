@@ -18,17 +18,12 @@ class StationsVehiclesSeeder extends Seeder
                 'pass_count' => 2,
             ],
             [
-                'stations_id' => 3,
+                'stations_id' => 2,
                 'vehicles_id' => 2,
                 'pass_count' => 2,
             ],
             [
-                'stations_id' => 4,
-                'vehicles_id' => 2,
-                'pass_count' => 1,
-            ],
-            [
-                'stations_id' => 6,
+                'stations_id' => 3,
                 'vehicles_id' => 3,
                 'pass_count' => 1,
             ],
@@ -38,30 +33,31 @@ class StationsVehiclesSeeder extends Seeder
                 'pass_count' => 1,
             ],
             [
-                'stations_id' => 3,
+                'stations_id' => 5,
                 'vehicles_id' => 5,
+                'pass_count' => 1,
+            ],
+            [
+                'stations_id' => 6,
+                'vehicles_id' => 6,
                 'pass_count' => 2,
             ],
             [
                 'stations_id' => 1,
-                'vehicles_id' => 6,
+                'vehicles_id' => 7,
                 'pass_count' => 1,
             ],
             [
                 'stations_id' => 4,
-                'vehicles_id' => 7,
+                'vehicles_id' => 8,
                 'pass_count' => 2,
             ],
             [
                 'stations_id' => 6,
-                'vehicles_id' => 8,
+                'vehicles_id' => 9,
                 'pass_count' => 1,
             ],
-            [
-                'stations_id' => 1,
-                'vehicles_id' => 9,
-                'pass_count' => 2,
-            ],
+            
         ];
         foreach ($stationVehicles as $stationVehicle) {
             StationVehicle::create($stationVehicle);
