@@ -9,7 +9,7 @@ class VehicleTypeController extends Controller
 {
     public function index()
     {
-        $vehicleTypes = VehicleType::all();
-        return view('vehicleTypes', compact('vehicleTypes'));
+        $vehiclesTypes = VehicleType::all();
+        return view('vehiclesTypes', compact('vehiclesTypes'));
     }
 }

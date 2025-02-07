@@ -6,7 +6,7 @@ use App\Models\VehicleType;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-class VehicleTypesSeeder extends Seeder
+class VehiclesTypesSeeder extends Seeder
 {
     public function run(): void
     {

@@ -8,7 +8,6 @@ return new class extends Migration
 {
     public function up(): void
     {
-        if (!Schema::hasTable('vehicles')) {
             Schema::create('station_vehicle', function (Blueprint $table) {
                 $table->id();
                 $table->foreignId('stations_id')->constrained('stations')->onDelete('cascade');
@@ -17,7 +16,6 @@ return new class extends Migration
                 $table->bigInteger('pass_count');
                 $table->timestamps();
             });
-        }
     }
     public function down(): void
     {
