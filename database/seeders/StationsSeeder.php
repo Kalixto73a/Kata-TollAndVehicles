@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Station;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class StationsSeeder extends Seeder
 {
@@ -35,5 +36,8 @@ class StationsSeeder extends Seeder
                 'city' => 'Marbella-Estepona',
             ],
             ];
+            foreach ($stations as $station) {
+                Station::create($station);
+            }
     }
 }

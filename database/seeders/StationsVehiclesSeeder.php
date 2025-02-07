@@ -3,10 +3,11 @@
 namespace Database\Seeders;
 
 use App\Models\Station;
+use App\Models\StationVehicle;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-class StationVehiclesSeeder extends Seeder
+class StationsVehiclesSeeder extends Seeder
 {
     public function run(): void
     {
@@ -68,5 +69,8 @@ class StationVehiclesSeeder extends Seeder
                 'vehicle_id' => 9,
             ],
         ];
+        foreach ($stationVehicles as $stationVehicle) {
+            StationVehicle::create($stationVehicle);
+        }
     }
 }

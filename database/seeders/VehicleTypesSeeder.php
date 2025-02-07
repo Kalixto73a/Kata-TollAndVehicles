@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\VehicleType;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class VehicleTypesSeeder extends Seeder
 {
@@ -20,5 +21,8 @@ class VehicleTypesSeeder extends Seeder
                 'name' => 'Camión',
             ],
         ];
+        foreach ($vehicleTypes as $vehicleType) {
+            VehicleType::create($vehicleType);
+        }
     }
 }
