@@ -9,7 +9,7 @@ class StationController extends Controller
 {
     public function index()
     {
-        $station = Station::all();
+        $stations = Station::all();
         return view('stations', compact('stations'));
     }
 }

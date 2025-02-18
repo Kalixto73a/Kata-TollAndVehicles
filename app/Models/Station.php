@@ -13,9 +13,8 @@ class Station extends Model
         'name',
         'city',
     ];
-    public function vehicles()
+    public function stationVehicles()
     {
-        return $this->belongsToMany(Vehicle::class)
-                    ->withPivot('pass_count');
+        return $this->hasMany(StationVehicle::class, 'stations_id');
     }
 }

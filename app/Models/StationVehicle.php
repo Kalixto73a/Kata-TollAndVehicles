@@ -23,8 +23,4 @@ class StationVehicle extends Model
     {
         return $this->belongsTo(Vehicle::class, 'vehicles_id');
     }
-    public function stationVehicles()
-    {
-        return $this->hasMany(StationVehicle::class, 'stations_id');
-    }
 }

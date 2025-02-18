@@ -11,7 +11,7 @@ return new class extends Migration
             Schema::create('stations_vehicles', function (Blueprint $table) {
                 $table->id();
                 $table->foreignId('stations_id')->constrained('stations')->onDelete('cascade');
-                $table->foreignId('vehicles_id')->constrained('vehicles')->onDselete('cascade');
+                $table->foreignId('vehicles_id')->constrained('vehicles')->onDelete('cascade');
                 $table->bigInteger('pass_count');
                 $table->timestamps();
             });

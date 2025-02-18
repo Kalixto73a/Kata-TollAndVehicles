@@ -21,7 +21,7 @@ class Vehicle extends Model
     }
     public function stations()
     {
-        return $this->belongsToMany(Station::class)
+        return $this->belongsToMany(Station::class, 'stations_vehicles', 'vehicles_id', 'stations_id')
                     ->withPivot('pass_count');
     }
 }
